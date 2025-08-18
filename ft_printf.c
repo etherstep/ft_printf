@@ -73,7 +73,7 @@ int	ft_printf(const char *format, ...)
 	while (*p)
 	{
 		if (*p && *p + 1)
-		  if (*p == '%' && (!*p || !ft_strchr("cspxXdiu%", *p + 1))
+		  if (*p == '%' && (!*p + 1 || !ft_strchr("cspxXdiu%", *p + 1))
 			  return (-1);
 		p++;
   }
