@@ -71,8 +71,12 @@ int	ft_printf(const char *format, ...)
 		return (-1);
 	p = format;
 	while (*p)
-		if (*p++ == '%' && (!*p || !ft_strchr("cspxXdiu%", *p++))
-			return (-1);
+	{
+		if (*p && *p + 1)
+		  if (*p == '%' && (!*p || !ft_strchr("cspxXdiu%", *p + 1))
+			  return (-1);
+		p++;
+  }
 	va_start(args, format);
 	count = 0;
 	while (*format)
